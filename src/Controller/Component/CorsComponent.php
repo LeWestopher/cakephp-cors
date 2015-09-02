@@ -52,7 +52,7 @@ class CorsComponent extends Component
         }
     }
     /**
-     * @param Event $event
+     * @param Event $e
      */
     public function beforeRender(Event $e)
     {
@@ -65,7 +65,7 @@ class CorsComponent extends Component
             $origin = (isset($opts['origin'])) ? $opts['origin'] : $this->origin;
             $methods = (isset($opts['methods'])) ? $opts['methods'] : $this->methods;
             $headers = (isset($opts['methods'])) ? $opts['headers'] : $this->headers;
-        } else if (isset($this->actions[$action]) && is_array($this->actions[$action])) {
+        } elseif (isset($this->actions[$action]) && is_array($this->actions[$action])) {
             // Specific action declared for this controller
             $opts = $this->actions[$action];
             $origin = (isset($opts['origin'])) ? $opts['origin'] : $this->origin;

@@ -45,7 +45,8 @@ class CorsComponent extends Component
 
 
     /**
-     * @param $options
+     * @param array $options
+     * @return boolean
      */
     public function enable($options)
     {
@@ -66,6 +67,8 @@ class CorsComponent extends Component
         if (isset($options['headers'])) {
             $this->headers = $options['headers'];
         }
+
+        return true;
     }
 
     /**

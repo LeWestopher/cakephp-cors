@@ -45,8 +45,8 @@ class CorsComponent extends Component
 
 
     /**
-     * @param array $options
-     * @return boolean
+     * @param $options
+     * @return bool
      */
     public function enable($options)
     {
@@ -72,7 +72,7 @@ class CorsComponent extends Component
     }
 
     /**
-     * @param Event $e
+     * @param $e
      * @return mixed
      */
     public function beforeRender(Event $e)

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/LeWestopher/cakephp-cors.svg?branch=master)](https://travis-ci.org/LeWestopher/cakephp-cors)
 [![Coverage](https://img.shields.io/coveralls/LeWestopher/cakephp-cors/master.svg)](https://travis-ci.org/snelg/cakephp-cors)
-[![Downloads](https://img.shields.io/github/downloads/snelg/cakephp-cors/latest/total.svg)](https://travis-ci.org/snelg/cakephp-cors)
+[![Downloads](https://img.shields.io/packagist/dt/snelg/cakephp-cors.svg?style=flat-square)](https://packagist.org/packages/snelg/cakephp-cors)
 
 
 
@@ -99,7 +99,6 @@ For bugs and feature requests, please use the [issues](https://github.com/snelg/
 
 To contribute to this plugin please follow a few basic rules.
 
-* Pull requests must be send to the ```develop``` branch.
 * Contributions must follow the [CakePHP coding standard](http://book.cakephp.org/3.0/en/contributing/cakephp-coding-conventions.html).
 * [Unit tests](http://book.cakephp.org/3.0/en/development/testing.html) are required.
 

@@ -11,7 +11,6 @@ namespace Cors\Controller\Component;
 use Cake\Controller\Component;
 use Cake\Event\Event;
 
-
 class CorsComponent extends Component
 {
     /**

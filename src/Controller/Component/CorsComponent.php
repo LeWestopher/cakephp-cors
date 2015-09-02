@@ -25,11 +25,18 @@ class CorsComponent extends Component
      * @param null $options
      */
     public $methods = [];
-
+    /**
+     * @var array
+     */
     public $headers = [];
-
+    /**
+     * @var string
+     */
     public $origin = '*';
 
+    /**
+     * @param null $options
+     */
     public function enable($options = null)
     {
         if (isset($options['actions'])) {
@@ -52,6 +59,7 @@ class CorsComponent extends Component
     }
     /**
      * @param Event $e
+     * @return /Cake/Network/Response
      */
     public function beforeRender(Event $e)
     {

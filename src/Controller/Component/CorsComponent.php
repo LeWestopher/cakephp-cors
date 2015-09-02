@@ -35,7 +35,8 @@ class CorsComponent extends Component
     public $origin = '*';
 
     /**
-     * @param null $options
+     * @param $options
+     * @return void
      */
     public function enable($options = null)
     {

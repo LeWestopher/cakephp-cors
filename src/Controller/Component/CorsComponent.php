@@ -11,34 +11,43 @@ namespace Cors\Controller\Component;
 use Cake\Controller\Component;
 use Cake\Event\Event;
 
+/**
+ * Class CorsComponent
+ * @package Cors\Controller\Component
+ */
 class CorsComponent extends Component
 {
+
     /**
      * @var array
      */
     public $actions = [];
+
     /**
      * @var bool
      */
     public $all = false;
+
     /**
-     * @param null $options
+     * @var array
      */
     public $methods = [];
+
     /**
      * @var array
      */
     public $headers = [];
+
     /**
      * @var string
      */
     public $origin = '*';
 
+
     /**
      * @param $options
-     * @return void
      */
-    public function enable($options = null)
+    public function enable($options)
     {
         if (isset($options['actions'])) {
             $this->actions = $options['actions'];
@@ -58,9 +67,10 @@ class CorsComponent extends Component
             $this->headers = $options['headers'];
         }
     }
+
     /**
      * @param Event $e
-     * @return /Cake/Network/Response
+     * @return mixed
      */
     public function beforeRender(Event $e)
     {

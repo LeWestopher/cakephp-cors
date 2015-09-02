@@ -91,6 +91,51 @@ Router::scope('/', function($routes) {
 }
 ```
 
+### Using the Cors plugin within a controller
+
+First, you should initate the Cors plugin in your controller like so:
+```
+class YourController extends AppController
+{
+    public $components = [
+        'Cors.Cors'
+    ];
+}
+```
+Then, define which routes you would like to utilize Cors with with the ```enable()``` function:
+```
+class YourController extends AppController
+{
+    public initialize(Event $e)
+    {
+        $this->Cors->enable([
+            'actions' => [
+                '*' => [
+                    'origin' => 'somesite.com',
+                    'headers' => [],
+                    'methods' => ['GET', 'POST']
+                ]
+            ]
+        ]);
+    {
+}
+```
+You can define default behaviors like so:
+```
+class YourController extends AppController
+{
+    public function initialize(Event $e)
+    {
+        $this->Cors->enable([
+            'actions' => ['*' => true],
+            'origin' => 'somesite.com',
+            'headers' => [],
+            'methods' => ['GET', 'POST'],
+        ])
+    }
+}
+```
+
 ### Support
 
 For bugs and feature requests, please use the [issues](https://github.com/snelg/cakephp-cors/issues) section of this repository.

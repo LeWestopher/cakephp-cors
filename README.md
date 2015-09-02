@@ -102,11 +102,35 @@ class YourController extends AppController
     ];
 }
 ```
-Then, define which routes you would like to utilize Cors with with the ```enable()``` function:
+Then, define which routes you would like to utilize Cors with with the ```enable()``` method:
 ```
 class YourController extends AppController
 {
-    public initialize(Event $e)
+    public function view ()
+    {
+        // Cors now enabled for this action!
+    }
+
+    public function initialize(Event $e)
+    {
+        $this->Cors->enable([
+            'actions' => [
+                'view' => [
+                    'origin' => 'somesite.com',
+                    'headers' => [],
+                    'methods' => ['GET', 'POST']
+                ],
+            ]
+        ]);
+    {
+}
+```
+
+You can also set Cors headers for an entire controller using the wildcard signifier:
+```
+class YourController extends AppController
+{
+    public function initialize(Event $e)
     {
         $this->Cors->enable([
             'actions' => [
@@ -117,10 +141,12 @@ class YourController extends AppController
                 ]
             ]
         ]);
-    {
+    }
 }
 ```
-You can define default behaviors like so:
+
+You can define default behaviors like so.  If you don't define the origin, headers, or method scoped to a particular
+action, then the default parameters will take their place.
 ```
 class YourController extends AppController
 {
@@ -131,7 +157,7 @@ class YourController extends AppController
             'origin' => 'somesite.com',
             'headers' => [],
             'methods' => ['GET', 'POST'],
-        ])
+        ]);
     }
 }
 ```
